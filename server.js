@@ -6,6 +6,12 @@ app.get('/', (req, res) => {
     res.send("This Works!")
 })
 
+//CONTROLLERS 
+
+// NEW
+app.get('/films/new', (req, res) => {
+    res.render('new.ejs')
+})
 // INDEX
 app.get('/films', (req, res) => {
     res.send("This Route is Working!")
