@@ -6,6 +6,10 @@ app.get('/', (req, res) => {
     res.send("This Works!")
 })
 
+// INDEX
+app.get('/films', (req, res) => {
+    res.send("This Route is Working!")
+})
 
 
 app.listen(PORT, () => {
