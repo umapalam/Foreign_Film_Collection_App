@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 3000
+const Film = require('./models/films')
 
 const mongoose = require('mongoose')
 
@@ -30,6 +31,16 @@ app.get('/', (req, res) => {
 // NEW
 app.get('/films/new', (req, res) => {
     res.render('new.ejs')
+})
+
+// CREATE 
+app.post('/films', (req, res) => {
+    if (req.body.seenTheFilm === "on") {
+        req.body.seenTheFilm = true
+    } else {
+        req.body.seenTheFilm = false
+    }
+    res.send(req.body)
 })
 
 // INDEX
