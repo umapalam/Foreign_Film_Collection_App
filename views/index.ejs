@@ -5,6 +5,17 @@
     <link rel="stylesheet" type="text/xss" href="/css/style.css">
 </head>
 <body>
-    
+    <h1>Index Page</h1>
+    <ul>
+        <% for (let i = 0; i < films.length; i++) { %> 
+            <li>
+                <%= films[i].title %> 
+            </li>
+        <% } %>
+    </ul>
+    <a href="films/new">Create a New Film</a>
 </body>
 </html>
+
+
+

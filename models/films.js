@@ -15,5 +15,7 @@ const filmSchema = new Schema({
     filmPoster: {type: String, required: true}
 })
 
+// INITIALIZING collection Film in foreignfilm database created earlier in server.js
+
 const Film = model('Film', filmSchema)
-model.exports = Film
+module.exports = Film

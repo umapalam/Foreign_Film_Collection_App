@@ -3,11 +3,14 @@ const app = express()
 const PORT = 3000
 const Film = require('./models/films')
 
+
 const mongoose = require('mongoose')
+
 
 //DATABASE CONNECTION - LOCALHOST
 const mongoURI = "mongodb://127.0.0.1:27017/foreignfilms"
 const db = mongoose.connection
+
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -24,8 +27,13 @@ app.use(express.urlencoded({ extended: true }))
 
 //CONTROLLERS 
 
-app.get('/', (req, res) => {
-    res.send("This Works!")
+//INDEX
+app.get('/films', (req, res)=>{
+    Film.find({}, (err, allFilms) =>{
+        res.render('index.ejs', {
+            films: allFilms
+        })
+    })
 })
 
 // NEW
@@ -40,12 +48,17 @@ app.post('/films', (req, res) => {
     } else {
         req.body.seenTheFilm = false
     }
-    res.send(req.body)
-})
-
-// INDEX
-app.get('/films', (req, res) => {
-    res.send("This Route is Working!")
+    //res.send(req.body)
+    Film.create(req.body, (error, createdFilm) => {
+        if (error){
+          console.log(error)
+          res.send(error)
+        } else {
+          //res.send(createdFilm)
+          console.log(createdFilm)
+          res.redirect('/films')
+        }
+    })
 })
 
 
