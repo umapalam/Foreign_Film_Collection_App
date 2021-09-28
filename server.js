@@ -41,6 +41,16 @@ app.get('/films/new', (req, res) => {
     res.render('new.ejs')
 })
 
+// SHOW 
+app.get('/films/:id', (req, res) => {
+    Film.findById(req.params.id, (error, foundFilm) => {
+        console.log(foundFilm)
+        res.render('show.ejs', {
+            films: foundFilm
+        })
+    })
+})
+
 // CREATE 
 app.post('/films', (req, res) => {
     if (req.body.seenTheFilm === "on") {

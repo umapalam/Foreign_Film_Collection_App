@@ -9,7 +9,8 @@
     <ul>
         <% for (let i = 0; i < films.length; i++) { %> 
             <li>
-                <%= films[i].title %> 
+                <a href="/films/<%=films[i].id%>" ><%= films[i].title %></a>
+                is from <%= films[i].country %>. 
             </li>
         <% } %>
     </ul>

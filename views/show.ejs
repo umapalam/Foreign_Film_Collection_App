@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Show Page</title>
+    <link rel="stylesheet" type="text/xss" href="/css/style.css">
+</head>
+<body>
+    <h1><%= films.title%></h1>
+    <p><%= films.director%> directed this film.</p>
+    <p> The film was made in <%= films.country%>. </p>
+    <p> Premise: <%= films.plot%> </p>
+    <p> The genre of the film can be classified as <%= films.genre%>.  </p>
+    <p> The film takes place in <%= films.setting%>. </p>
+    <p> The run time of the film is <%= films.runTime%>  minutes. </p>
+    <p> The language primarily spoken by actors in the film is <%= films.languages%>.  </p>
+    <% if (films.seenTheFilm) {%>
+        <p> I have seen this film!</p>
+    <% } else {%>
+        <p> I have NOT seen this film!</p>
+    <% } %>
+    <%= films.filmPoster%>
+</body>
+</html>
