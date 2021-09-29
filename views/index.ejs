@@ -11,6 +11,9 @@
             <li>
                 <a href="/films/<%=films[i].id%>" ><%= films[i].title %></a>
                 is from <%= films[i].country %>. 
+                <form>
+                    <input type="submit" value="Delete">
+                </form>
             </li>
         <% } %>
     </ul>

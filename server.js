@@ -41,6 +41,43 @@ app.get('/films/new', (req, res) => {
     res.render('new.ejs')
 })
 
+// SEED DATA
+app.get('/films/seed', (req, res) => {
+    Film.create([
+        {
+            title: "Okuribito", 
+            director: "Yōjirō Takita" , 
+            starring: "Masahiro Motoki" , 
+            country: "Japan", 
+            plot: "The film follows a young man who returns to his hometown after a failed career as a cellist and stumbles across work as a nōkanshi—a traditional Japanese ritual mortician. " , 
+            genre: "Drama" , 
+            setting: "Yamagata" , 
+            runTime: 130 , 
+            languages: "Japanese", 
+            seenTheFilm: false , 
+            filmPoster: "https://flxt.tmsimg.com/assets/p194201_p_v10_af.jpg" 
+        },
+        {
+            title:"Gwasok Seukaendeul", 
+            director: "Kang Hyeong-cheol", 
+            starring: "Park Bo-young", 
+            country: "South Korea", 
+            plot: "This is an intergenerational drama about finding family and learning how to deal with unexpected situations. ", 
+            genre: "Comedy Drama", 
+            setting: "Seoul", 
+            runTime: 108, 
+            languages: "Korean", 
+            seenTheFilm: false, 
+            filmPoster: "https://photos.hancinema.net/photos/fullsizephoto73186.jpg"
+        }, 
+    ], (err, data)=>{
+        if (err){
+            console.log(err)
+        }
+        res.redirect('/films')
+    })
+})
+
 // SHOW 
 app.get('/films/:id', (req, res) => {
     Film.findById(req.params.id, (error, foundFilm) => {
