@@ -122,6 +122,11 @@ app.delete('/films/:id', (req, res) => {
     })
 })
 
+// EDIT 
+app.get('/films/:id/edit', (req, res) => {
+    res.render('edit.ejs')
+})
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on PORT: ${PORT}`)

@@ -9,8 +9,9 @@
     <ul>
         <% for (let i = 0; i < films.length; i++) { %> 
             <li>
-                <a href="/films/<%=films[i].id%>" ><%= films[i].title %></a>
+                <a href="/films/<%= films[i].id %>" ><%= films[i].title %></a>
                 is from <%= films[i].country %>. 
+                <a href="/films/<%= films[i].id %>/edit">Edit</a>
                 <form action="/films/<%= films[i].id %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete">
                 </form>

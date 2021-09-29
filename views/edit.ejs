@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Foreign Film App</title>
+</head>
+<body>
+    <h1>New Film Page</h1>
+    <form action="/films" method="POST">
+    Title: <input type="text" name="title" /> <br/>
+    Director: <input type="text" name="director" /> <br/>
+    Starring: <input type="text" name="starring" /> <br/>
+    Country: <input type="text" name="country" /> <br/>
+    Plot: <textarea rows= "4" name="plot" ></textarea><br/>
+    Genre: <input type="text" name="genre" /> <br/>
+    Setting: <input type="text" name="setting" /> <br/>
+    Run Time (min): <input type="number" name="runTime" /> <br/>
+    Languages: <input type="text" name="languages" /> <br/>
+    Seen the Film?: <input type="checkbox" name="seenTheFilm" /> <br/>
+    Film Poster: <input type="text" name="filmPoster" /> <br/>
+    
+    <input type="submit" value="Create Film"/>
+    </form>
+    <a href="/films">Back to Index</a>
+</body>
+</html>
