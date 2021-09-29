@@ -110,7 +110,7 @@ app.post('/films', (req, res) => {
     })
 })
 
-// DELETE 
+// DESTROY 
 app.delete('/films/:id', (req, res) => {
     Film.findByIdAndDelete(req.params.id, (error, deletedFilm) => {
         if(error) {
@@ -136,6 +136,26 @@ app.get('/films/:id/edit', (req, res) => {
     })
 })
 
+// UPDATE
+app.put('/films/:id', (req, res) => {
+    // res.send(req.body)
+    req.body.seenTheFilm = req.body.seenTheFilm === 'on'
+    Film.findByIdAndUpdate(
+        req.params.id, 
+        req.body,
+        {
+            new: true, 
+        }, 
+
+        (error, updatedFilm) => {
+            if (error) {
+                console.log(error)
+                res.send(error)
+            } else {
+                res.redirect('/films')
+            }
+        })
+})
 
 app.listen(PORT, () => {
   console.log(`Server is listening on PORT: ${PORT}`)

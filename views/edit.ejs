@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Edit Film Information</h1>
-    <form action="/films" method="POST">
+    <form action="/films/<%= films.id %>?_method=PUT" method="POST">
     Title: 
     <input 
         type="text" 
@@ -31,7 +31,11 @@
         value="<%= films.country %>" 
     /> <br/>
     Plot: 
-    <textarea rows= "4" name="plot" ></textarea><br/>
+    <input
+        type="text" 
+        name="plot" 
+        value="<%= films.plot %>" 
+    /> <br/>
     Genre: 
     <input 
         type="text" 
@@ -71,7 +75,7 @@
         value="<%= films.filmPoster %>"
     /> <br/>
     
-    <input type="submit" value="Create Film"/>
+    <input type="submit" value="Update Film"/>
     </form>
     <a href="/films">Back to Index</a>
 </body>
