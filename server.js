@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
+
 const PORT = 3000
 const Film = require('./models/films')
-
 
 const mongoose = require('mongoose')
 
@@ -24,6 +25,7 @@ db.on('disconnected', () =>{console.log('mongo disconnected')})
 
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 //CONTROLLERS 
 
@@ -104,6 +106,18 @@ app.post('/films', (req, res) => {
           //res.send(createdFilm)
           console.log(createdFilm)
           res.redirect('/films')
+        }
+    })
+})
+
+// DELETE 
+app.delete('/films/:id', (req, res) => {
+    Film.findByIdAndDelete(req.params.id, (error, deletedFilm) => {
+        if(error) {
+            console.log(error)
+            res.send(error)
+        } else {
+            res.redirect('/films')
         }
     })
 })
