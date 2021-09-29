@@ -124,7 +124,16 @@ app.delete('/films/:id', (req, res) => {
 
 // EDIT 
 app.get('/films/:id/edit', (req, res) => {
-    res.render('edit.ejs')
+    Film.findById(req.params.id, (error, foundFilm) => {
+        if (error) {
+            console.log(error)
+            res.send(error)
+        } else {
+            res.render('edit.ejs', {
+                films: foundFilm
+            })
+        }
+    })
 })
 
 
