@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Index Page</title>
+    <title>Foreign Film Collection</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <h1>Foreign Film Collection</h1>
-    <a href="/films/new">Add a New Film Entry</a> 
+    <a class="anchor" href="/films/new">Add a New Film Entry</a> 
   
     <ul>   <br/>
         <div id="desc">
-            <h3>Description</h3>
             <p>This is an app that allows an individual to display foreign films they are interested in watching.</p>
             <p>It keeps track of the films and the user is allowed to add or delete films as well as edit existing films in their collection.</p>
         </div> <br/>
         <% for (let i = 0; i < films.length; i++) { %> 
             <li id="items">
                 
-                <a href="/films/<%= films[i].id%>"><img id="poster" src="<%= films[i].filmPoster%>" width="130px" ></a> <br/>
+                <a href="/films/<%= films[i].id%>"><img id="poster" src="<%= films[i].filmPoster%>" width="130px" height="180px" ></a> <br/>
 
-                <a href="/films/<%= films[i].id %>/edit">Edit</a> |
-                
+                <div class="link">
+                | <a class="anchor" href="/films/<%= films[i].id %>/edit">Edit</a> |
+                </div>
+
+                <div  class="link">
                 <form action="/films/<%= films[i].id %>?_method=DELETE" method="POST"> <br/>
-                    <input type="submit" value="Delete">
+                    <input class="btn btn-outline-success" type="submit" value="Delete">
                 </form> <br/>
+                </div>
                 
             </li>
         <% } %>

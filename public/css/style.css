@@ -2,6 +2,7 @@ body{
     background-color: cadetblue;
     margin: 30px;
     color: whitesmoke;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 ul {
@@ -35,6 +36,7 @@ h1 {
     justify-content: center;
     padding: 2%;
     background-color: cadetblue;
+    
 }
 
 #desc {
@@ -44,5 +46,16 @@ h1 {
     text-align: center;
 }
 
+.anchor{
+    color: whitesmoke;
+}
 
+.class {
+    display: flex;
+    text-align: center;
+}
+
+.link{
+    text-align: center;
+}
 
