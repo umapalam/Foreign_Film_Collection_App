@@ -8,13 +8,16 @@
     <h1>Index Page</h1>
     <ul>
         <% for (let i = 0; i < films.length; i++) { %> 
-            <li>
-                <a href="/films/<%= films[i].id %>" ><%= films[i].title %></a>
-                is from <%= films[i].country %>. 
-                <a href="/films/<%= films[i].id %>/edit">Edit</a>
-                <form action="/films/<%= films[i].id %>?_method=DELETE" method="POST">
+            <li id="items">
+                
+                <a href="/films/<%= films[i].id%>"><img id="poster" src="<%= films[i].filmPoster%>" width="130px" ></a> <br/>
+                <a href="/films/<%= films[i].id %>" ><%= films[i].title %></a> |
+                <a href="/films/<%= films[i].id %>/edit">Edit</a> 
+                
+                <form action="/films/<%= films[i].id %>?_method=DELETE" method="POST"> <br/>
                     <input type="submit" value="Delete">
-                </form>
+                </form> <br/>
+                
             </li>
         <% } %>
     </ul>

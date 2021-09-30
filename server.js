@@ -27,6 +27,8 @@ db.on('disconnected', () =>{console.log('mongo disconnected')})
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
+//SESSIONS
+
 //CONTROLLERS 
 const filmController = require('./controllers/filmController')
 app.use('/films', filmController)

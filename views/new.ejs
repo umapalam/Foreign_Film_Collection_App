@@ -6,9 +6,18 @@
 <body>
     <h1>New Film Page</h1>
     <form action="/films" method="POST">
-    Title: <input type="text" name="title" /> <br/>
-    Director: <input type="text" name="director" /> <br/>
-    Starring: <input type="text" name="starring" /> <br/>
+        <fieldset>
+            <label for="title">Title:</label>
+            <input id ="title" type="text" name="title" placeholder="Enter the Film Title"/> 
+        </fieldset> <br/>
+        <fieldset>
+            <label for="director">Director:</label>
+            <input id ="director" type="text" name="director" placeholder="Enter Director of Film"/> <br/>
+        </fieldset> <br/>
+        <fieldset>
+            <label for="starring">Starring</label>
+            <input id="starring" type="text" name="starring" placeholder="Enter Main Film Star"/>
+        </fieldset> <br />
     Country: <input type="text" name="country" /> <br/>
     Plot: <input type="text" name="plot" /><br/>
     Genre: <input type="text" name="genre" /> <br/>
