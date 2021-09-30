@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1><%= films.title%></h1>
+    <div id="details">
     <p><%= films.director%> directed this film.</p>
     <p> The film was made in <%= films.country%>. </p>
     <p> Premise: <%= films.plot%> </p>
@@ -19,8 +20,10 @@
     <% } else {%>
         <p> I have NOT seen this film!</p>
     <% } %>
-    <img width="250" src="<%= films.filmPoster%>"/> 
-     <br/>
-    <a href="/films">Back to Index</a>
+    <div id="img">
+        <img width="250" src="<%= films.filmPoster%>"/> 
+    </div>
+    </div> <br/>
+    <a href="/films" >Back to Index</a>
 </body>
 </html>

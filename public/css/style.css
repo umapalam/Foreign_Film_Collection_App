@@ -7,9 +7,42 @@ body{
 ul {
     list-style-type: none;
     border: solid whitesmoke; 
+    padding: 2%;
+    background-color: teal;
 }
 
 h1 {
     display: flex; 
     justify-content: center;
 }
+
+#details{
+    border: solid whitesmoke;
+    padding: 2%;
+}
+
+#img{
+    border: solid whitesmoke;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    background-color: teal;
+}
+
+#items{
+    display: inline-block;
+    border: white solid;
+    justify-content: center;
+    padding: 2%;
+    background-color: cadetblue;
+}
+
+#desc {
+    border: solid whitesmoke;
+    padding: 2%;
+    background-color: cadetblue;
+    text-align: center;
+}
+
+
+

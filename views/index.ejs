@@ -7,15 +7,20 @@
 </head>
 <body>
     <h1>Foreign Film Collection</h1>
-    <a href="/films/new">Create a New Film</a> 
+    <a href="/films/new">Add a New Film Entry</a> 
   
     <ul>   <br/>
+        <div id="desc">
+            <h3>Description</h3>
+            <p>This is an app that allows an individual to display foreign films they are interested in watching.</p>
+            <p>It keeps track of the films and the user is allowed to add or delete films as well as edit existing films in their collection.</p>
+        </div> <br/>
         <% for (let i = 0; i < films.length; i++) { %> 
             <li id="items">
                 
                 <a href="/films/<%= films[i].id%>"><img id="poster" src="<%= films[i].filmPoster%>" width="130px" ></a> <br/>
-                <a href="/films/<%= films[i].id %>" ><%= films[i].title %></a> |
-                <a href="/films/<%= films[i].id %>/edit">Edit</a> 
+
+                <a href="/films/<%= films[i].id %>/edit">Edit</a> |
                 
                 <form action="/films/<%= films[i].id %>?_method=DELETE" method="POST"> <br/>
                     <input type="submit" value="Delete">
