@@ -2,64 +2,84 @@
 <html lang="en">
 <head>
     <title>Foreign Film App</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <h1>Edit Film Information</h1>
     <form action="/films/<%= films.id %>?_method=PUT" method="POST">
+    <fieldset>
     Title: 
     <input 
         type="text" 
         name="title" 
         value="<%= films.title %>"
     /> <br/>
+    </fieldset> <br/>
+    <fieldset>
     Director: 
     <input 
         type="text" 
         name="director" 
         value="<%= films.director %>"
     /> <br/>
+    </fieldset> <br/>
+    <fieldset>
     Starring: 
     <input 
         type="text" 
         name="starring" 
         value="<%= films.starring %>"
     /> <br/>
+    </fieldset> <br/>  
+    <fieldset>
     Country: 
     <input 
         type="text" 
         name="country" 
         value="<%= films.country %>" 
     /> <br/>
+    </fieldset> <br/> 
+    <fieldset>
     Plot: 
     <input
         type="text" 
         name="plot" 
         value="<%= films.plot %>" 
     /> <br/>
+    </fieldset> <br/> 
+    <fieldset>
     Genre: 
     <input 
         type="text" 
         name="genre" 
         value="<%= films.genre %>"
     /> <br/>
+    </fieldset> <br/> 
+    <fieldset>
     Setting: 
     <input 
         type="text" 
         name="setting" 
         value="<%= films.setting %>"
     /> <br/>
+    </fieldset> <br/> 
+    <fieldset>
     Run Time (min): 
     <input 
         type="number" 
         name="runTime" 
         value="<%= films.runTime %>"
     /> <br/>
+    </fieldset> <br/>
+    <fieldset>
     Languages: 
     <input 
         type="text" 
         name="languages" 
         value="<%= films.languages %>"
     /> <br/>
+    </fieldset> <br/>
+    <fieldset>
     Seen the Film?: 
     <input 
         type="checkbox" 
@@ -68,14 +88,18 @@
             checked
         <% } %>
     /> <br/>
+    </fieldset> <br/>
+    <fieldset>
     Film Poster: 
     <input 
         type="text" 
         name="filmPoster"  
         value="<%= films.filmPoster %>"
     /> <br/>
-    
+    </fieldset> <br/>
+    <fieldset>
     <input type="submit" value="Update Film"/>
+    </fieldset> <br/>
     </form>
     <a href="/films">Back to Index</a>
 </body>

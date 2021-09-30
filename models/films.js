@@ -12,7 +12,7 @@ const filmSchema = new Schema({
     runTime: {type: Number, required: true}, 
     languages: {type: String, required: true}, 
     seenTheFilm: {type: Boolean, default: false}, 
-    filmPoster: {type: String}
+    filmPoster: {type: String, required: true}
 })
 
 // INITIALIZING collection Film in foreignfilm database created earlier in server.js

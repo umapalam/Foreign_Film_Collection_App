@@ -7,6 +7,8 @@ const Film = require('./models/films')
 
 const mongoose = require('mongoose')
 
+app.use(express.static('public'))
+
 
 //DATABASE CONNECTION - LOCALHOST
 const mongoURI = "mongodb://127.0.0.1:27017/foreignfilms"
@@ -26,6 +28,7 @@ db.on('disconnected', () =>{console.log('mongo disconnected')})
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+app.use(express.json())
 
 //SESSIONS
 
