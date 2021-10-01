@@ -17,6 +17,11 @@ h1 {
     justify-content: center;
 }
 
+h3 {
+    display: flex; 
+    justify-content: center;
+}
+
 #details{
     border: solid whitesmoke;
     padding: 2%;
@@ -59,3 +64,6 @@ h1 {
     text-align: center;
 }
 
+.submit{
+    align-items: center;
+}

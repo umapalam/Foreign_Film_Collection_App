@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <h1>Foreign Film Collection</h1>
+    <h3>|| Sign In ||</h3>
+    <a class="anchor" href="/users/register">Register New User</a> 
+
+    <form action="/users/signin" method="POST"> 
+        <br/>
+        <fieldset>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+        </fieldset> <br/>
+        <fieldset>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+        </fieldset>
+        <br/>
+        <div class="submit">
+        <input type="submit" value="Sign In">
+        </div>
+    </form>
+</body>
+</html>

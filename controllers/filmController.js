@@ -4,6 +4,14 @@ const router = express.Router()
 
 const Film = require('../models/films')
 
+const authRequired = (req, res, next) => {
+	if (req.session.currentUser) {
+		next()
+	} else {
+		res.send('You must be signed in!')
+	}
+}
+
 //INDEX
 router.get('/', (req, res)=>{
     Film.find({}, (err, allFilms) =>{
@@ -67,22 +75,26 @@ router.get('/:id', (req, res) => {
 
 // CREATE 
 router.post('/', (req, res) => {
-    if (req.body.seenTheFilm === "on") {
-        req.body.seenTheFilm = true
-    } else {
-        req.body.seenTheFilm = false
-    }
-    //res.send(req.body)
-    Film.create(req.body, (error, createdFilm) => {
-        if (error){
-          console.log(error)
-          res.send(error)
+    if (req.session.currentUser) {
+        if (req.body.seenTheFilm === "on") {
+            req.body.seenTheFilm = true
         } else {
-          //res.send(createdFilm)
-          console.log(createdFilm)
-          res.redirect('/films')
+            req.body.seenTheFilm = false
         }
-    })
+        //res.send(req.body)
+        Film.create(req.body, (error, createdFilm) => {
+            if (error){
+            console.log(error)
+            res.send(error)
+            } else {
+             //res.send(createdFilm)
+            console.log(createdFilm)
+            res.redirect('/films')
+            }
+        })
+    } else {
+        res.send("You must be signed in!")
+    }
 })
 
 // DESTROY 
@@ -98,7 +110,7 @@ router.delete('/:id', (req, res) => {
 })
 
 // EDIT 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', authRequired, (req, res) => {
     Film.findById(req.params.id, (error, foundFilm) => {
         if (error) {
             console.log(error)
