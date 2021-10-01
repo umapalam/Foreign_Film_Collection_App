@@ -11,7 +11,8 @@ app.use(express.static('public'))
 
 
 //DATABASE CONNECTION - LOCALHOST
-const mongoURI = "mongodb://127.0.0.1:27017/foreignfilms"
+// const mongoURI = "mongodb://127.0.0.1:27017/foreignfilms"
+const mongoURI = "mongodb+srv://admin:antimony@db-cluster-1.kmayy.mongodb.net/foreignfilms?retryWrites=true&w=majority"
 const db = mongoose.connection
 
 mongoose.connect(mongoURI, {
