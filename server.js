@@ -37,6 +37,6 @@ app.use(express.json())
 const filmController = require('./controllers/filmController')
 app.use('/films', filmController)
 
-app.listen(PORT||5000, () => {
+app.listen(PORT, () => {
   console.log(`Server is listening on PORT: ${PORT}`)
 })
