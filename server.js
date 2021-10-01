@@ -51,24 +51,9 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/check-session-property', (req, res) =>{
-  if (req.session.someProperty) {
-    res.send(req.session.someProperty)
-  } else {
-    res.send("We have not set anthing yet!")
-  }
+app.get('/', (req, res) =>{
+  res.redirect('/signin')
 })
-
-app.get('/set-session-property/:value', (req, res) =>{
-  req.session.someProperty =  req.params.value
-  res.redirect('/films')
-}) 
-
-app.get('/destroy-session', (req, res) => {
-  req.session.destroy()
-  res.redirect('/films')
-})
-
 
 //CONTROLLERS 
 const filmController = require('./controllers/filmController')
