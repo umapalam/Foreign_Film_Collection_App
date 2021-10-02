@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1><%= films.title%></h1>
+    <a class="anchor" href="/films">|Back to Film Collection|</a>
     <div id="details">
     <p><%= films.director%> directed this film.</p>
     <p> The film was made in <%= films.country%>. </p>
@@ -25,6 +26,5 @@
         <img width="250" src="<%= films.filmPoster%>"/> 
     </div>
     </div> <br/>
-    <a class="anchor" href="/films" >Back to Film Collection</a>
 </body>
 </html>

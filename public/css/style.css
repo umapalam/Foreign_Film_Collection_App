@@ -41,7 +41,7 @@ h3 {
     justify-content: center;
     padding: 2%;
     background-color: cadetblue;
-    
+
 }
 
 #desc {
@@ -64,6 +64,18 @@ h3 {
     text-align: center;
 }
 
-.submit{
-    align-items: center;
+
+.signin{
+    border: whitesmoke solid;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.sign{
+    border: whitesmoke solid;
+    background-color: teal;
+    display: flex;
+    padding: 1%;
 }

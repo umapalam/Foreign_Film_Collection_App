@@ -51,6 +51,7 @@ app.use((req, res, next) => {
   next()
 })
 
+//HEROKU / ROOT 
 app.get('/', (req, res) =>{
   res.redirect('/users/signin')
 })
