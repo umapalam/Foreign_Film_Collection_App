@@ -19,7 +19,7 @@ router.post('/register', (req, res) => {
 		} else {
 			User.create(req.body, (error, createdUser) => {
 				req.session.currentUser = createdUser
-				res.redirect('/films')
+				res.redirect('/')
 			})
 		}
 	})
